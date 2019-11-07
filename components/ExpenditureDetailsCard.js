@@ -34,7 +34,7 @@ const ExpenditureDetailsCard = props => {
     const [commentValue, setCommentValue] = useState();
     const [isLoadingReceiptImages, setIsLoadingReceiptImages] = useState(false);
 
-    const { receipts, navigation } = props;
+    let { receipts, navigation } = props;
     
     // Fetches receipts images from server
     const fetchReceiptsImages = useCallback(async () => {
@@ -68,6 +68,7 @@ const ExpenditureDetailsCard = props => {
                 receipts[i].error = true;
             }         
         }
+        receipts = receipts.reverse();
     }, [receipts]);
     
     useEffect(() => {
@@ -184,7 +185,7 @@ const ExpenditureDetailsCard = props => {
                                         <ActivityIndicator size='small' color={Colors.primary}/>
                                     </View>
                                     :
-                                    <FlatList 
+                                    <FlatList
                                         horizontal
                                         keyExtractor={(item) => item.url}
                                         data={receipts}

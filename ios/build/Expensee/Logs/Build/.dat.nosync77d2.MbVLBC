@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>1AC190E4-4F36-45E3-BEA3-1A99A8B4D941</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1AC190E4-4F36-45E3-BEA3-1A99A8B4D941.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Expensee project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Expensee</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>594827958.20719194</real>
+			<key>timeStoppedRecording</key>
+			<real>594827959.26225805</real>
+			<key>title</key>
+			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>1AC190E4-4F36-45E3-BEA3-1A99A8B4D941</string>
+		</dict>
+		<key>DDABF913-7C44-4F71-9927-0538C870FB95</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DDABF913-7C44-4F71-9927-0538C870FB95.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Expensee project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Expensee</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>594830674.73081505</real>
+			<key>timeStoppedRecording</key>
+			<real>594830675.94165206</real>
+			<key>title</key>
+			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>DDABF913-7C44-4F71-9927-0538C870FB95</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

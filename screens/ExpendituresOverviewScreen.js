@@ -165,7 +165,7 @@ const ExpendituresOverviewScreen = props => {
     if (!isLoading && totalExpenditures === 0) {
         return (
             <View style={styles.screenCentered}>
-                <Text>There are no expenses to show</Text>
+                <Text style={styles.text}>There are no expenses to show</Text>
             </View>
         );
     }
@@ -197,24 +197,28 @@ const ExpendituresOverviewScreen = props => {
                 <ActivityIndicator size='large' color={Colors.primary}/>
             </View>
             :
-            <FlatList 
-                keyExtractor={(item) => item.id}
-                data={expenditures}
-                renderItem={(itemData) => 
-                    <ExpenditureItem
-                        onPress={expenditureSelectedHandler.bind(this, itemData.item.id, itemData.item.index)}
-                        count={itemData.item.index.toString()}
-                        amount={itemData.item.amount}
-                        currency={itemData.item.currency}
-                        name={itemData.item.name}
-                        email={itemData.item.email}
-                        date={itemData.item.date}
-                        retail={itemData.item.retail}
-                        comment={itemData.item.comment}
-                        receipts={itemData.item.receipts}
-                    />
-                }
-            />
+            (expenditures.length > 0 ?
+                <FlatList 
+                    keyExtractor={(item) => item.id}
+                    data={expenditures}
+                    renderItem={(itemData) => 
+                        <ExpenditureItem
+                            onPress={expenditureSelectedHandler.bind(this, itemData.item.id, itemData.item.index)}
+                            count={itemData.item.index.toString()}
+                            amount={itemData.item.amount}
+                            currency={itemData.item.currency}
+                            name={itemData.item.name}
+                            email={itemData.item.email}
+                            date={itemData.item.date}
+                            retail={itemData.item.retail}
+                            comment={itemData.item.comment}
+                            receipts={itemData.item.receipts}
+                        />
+                    }
+                />
+                :
+                    <Text style={styles.text}>Ops... nothing came out of your search</Text>
+                )
             }
             {totalExpenditures !== 0 ? 
             <LoadExpendituresSection
@@ -268,8 +272,9 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: 'roboto-bold',
-        fontSize: 20,
-        color: Colors.text
+        fontSize: 17,
+        color: Colors.text,
+        margin: 30
     },
     searchInput: {
         textAlign: 'left',

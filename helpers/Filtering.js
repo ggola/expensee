@@ -4,7 +4,7 @@ const getFilteredExpenditures = (loadedExpenditures, searchQuery) => {
 
     const searchQueryArray = searchQuery.split(" ");
     if (searchQueryArray.length === 1) {
-        // Single query
+        // User has searched for currency or name
         // Filter with searchQuery
         if (isNaN(searchQuery)) {
             if (searchQuery.toUpperCase() === 'EUR' || searchQuery.toUpperCase() === 'GBP' || searchQuery.toUpperCase() === 'DKK') {
@@ -15,11 +15,9 @@ const getFilteredExpenditures = (loadedExpenditures, searchQuery) => {
                 // Search for name or emails
                 filteredExpenditures = loadedExpenditures.filter(exp => String(exp.name.toLowerCase()).includes(searchQuery.toLowerCase()) || String(exp.email.toLowerCase()).includes(searchQuery.toLowerCase()));
             }
-        } else {
-            // Search for amount
-            filteredExpenditures = loadedExpenditures.filter(exp => parseFloat(exp.amount) >= parseFloat(searchQuery));
-        }
+        } 
     } else {
+        // 
         const queryAmount = searchQueryArray[0];
         const queryCurrency = searchQueryArray[1];
         // Filter by currency

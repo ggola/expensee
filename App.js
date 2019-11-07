@@ -1,24 +1,3 @@
-/* 
-***** Installed Packages *****
-
-***** REDUX *****
-redux 
-react-redux 
-redux-thunk
-
-***** EXPO *****
-@expo/vector-icons 
-expo-font
-
-***** REACT NAVIGATION *****
-react-navigation 
-react-navigation-stack 
-react-navigation-header-buttons r
-eact-native-gesture-handler 
-react-native-reanimated 
-react-native-screens
-*/
-
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-navigation';
 

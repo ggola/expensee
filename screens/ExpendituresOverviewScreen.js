@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Platform, TextInput, Animated } from 'react-native';
+import { View, Button, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Platform, TextInput, Animated } from 'react-native';
 
 // Header Buttons
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
@@ -64,11 +64,12 @@ const ExpendituresOverviewScreen = props => {
     const totalExpenditures = useSelector((state) => state.expenditures.totalExpenditures);
     
     const expenditures = useSelector((state) => state.expenditures.expenditures.sort((a, b) => {
-        if (a.index > b.index) {
-            return 1;
-        }
-        return -1;
-    }));
+            if (a.index > b.index) {
+                return 1;
+            }
+            return -1;
+        })
+    );
 
     //********* DATA LOADING
     // Load data from server/db
@@ -180,14 +181,14 @@ const ExpendituresOverviewScreen = props => {
                         blurOnSubmit
                         autoCapitalize='none'
                         autoCorrect={false}
-                        placeholder='Try: EUR or 3000 or 2000 GBP or Hoover'
+                        placeholder='Try: EUR or 2000 GBP or Hoover'
                         placeholderTextColor='rgba(37,42,52,0.7)'
                         keyboardType='default'
                         returnKeyType='search'
                         onSubmitEditing={searchExpendituresHandler}
                         style={styles.searchInput}
                         onChangeText={searchInputHandler}
-                        value={searchValue}/>
+                        value={searchValue}/> 
                 </Animated.View>  
                 }               
             </View>
@@ -282,6 +283,10 @@ const styles = StyleSheet.create({
     },
     slideView: {
         backgroundColor: '#aaa'
+    },
+    invalidSearchText: {
+        fontFamily: 'roboto-medium',
+        fontSize: 14
     }
 });
 

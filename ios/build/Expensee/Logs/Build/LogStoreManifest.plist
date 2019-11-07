@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>C5A47D2C-655A-4FDB-960E-393A6837E221</key>
+		<key>1AC190E4-4F36-45E3-BEA3-1A99A8B4D941</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,11 +15,11 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>C5A47D2C-655A-4FDB-960E-393A6837E221.xcactivitylog</string>
+			<string>1AC190E4-4F36-45E3-BEA3-1A99A8B4D941.xcactivitylog</string>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>W</string>
+				<string>E</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Expensee project</string>
@@ -30,13 +30,13 @@
 			<key>signature</key>
 			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>594794749.25508499</real>
+			<real>594827958.20719194</real>
 			<key>timeStoppedRecording</key>
-			<real>594794753.76407099</real>
+			<real>594827959.26225805</real>
 			<key>title</key>
 			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>C5A47D2C-655A-4FDB-960E-393A6837E221</string>
+			<string>1AC190E4-4F36-45E3-BEA3-1A99A8B4D941</string>
 		</dict>
 	</dict>
 </dict>

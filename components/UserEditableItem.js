@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     detailContainer: {
-        marginVertical: 10
+        marginVertical: 10,
+        width: 200
     },
     iconContainer: {
         height: 30,

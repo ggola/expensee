@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, TextInput, StyleSheet, Platform, ScrollView, KeyboardAvoidingView, FlatList, ActivityIndicator } from 'react-native';
+import { View, TextInput, StyleSheet, Platform, ScrollView, KeyboardAvoidingView, FlatList, ActivityIndicator, ActionSheetIOS, NativeModules } from 'react-native';
 
-import ImagePicker from 'react-native-image-picker';
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['requires main queue setup']);
 
 import AmountItem from './AmountItem';
 import UserInfosSection from './UserInfosSection';
@@ -10,21 +11,6 @@ import ThumbImageItem from './ThumbImageItem';
 import Colors from '../constants/Colors';
 
 import ENV from '../env';
-
-const imagePickerOptions = {
-    title: 'Select Receipt Picture',
-    allowsEditing: false,
-    tintColor: Colors.primary,
-    quality: 0.6,
-    maxWidth: 400,
-    maxHeight: 700,
-    storageOptions: {
-        skipBackup: true,
-        path: 'images',
-    },
-};
-
-var reader = new FileReader();
 
 let inputRef = React.createRef();
 
@@ -47,58 +33,84 @@ const ExpenditureDetailsCard = props => {
             receipts[i] = receiptWithData;
             try {
                 const response = await fetch(ENV.baseUrl + receipts[i].url);
-                
                 if (response.ok) {
                     const blob = await response.blob();
                     if (blob) {
-                        reader.onload = () => {
-                            receiptWithData.data = reader.result;
-                            if (i === receipts.length) {
-                                setIsLoadingReceiptImages(false);
-                            }
+                        receiptWithData.data = await getImage(blob);
+                        if (i === receipts.length - 1) {
+                            receipts = receipts.reverse();
+                            setIsLoadingReceiptImages(false);
                         }
-                        reader.readAsDataURL(blob);
                     } else {
-                        receipts[i].error = true;
+                        receipts[i].error = true;  
                     }
                 } else {
-                    receipts[i].error = true;
+                    receipts[i].error = true;   
                 }
             } catch {
                 receipts[i].error = true;
             }         
         }
-        receipts = receipts.reverse();
-    }, [receipts]);
-    
+    }, [setIsLoadingReceiptImages, receipts]);
+
+    // Gets image from blob
+    const getImage = async (blob) => {
+        return new Promise((resolve, reject) => {
+            var reader = new FileReader();
+            reader.onload = (event) => {
+                var data = event.target.result;
+                resolve(data);
+            };
+            reader.readAsDataURL(blob);
+        });
+    };
+
+    // Loads receitps images
     useEffect(() => {
         setIsLoadingReceiptImages(true);
         fetchReceiptsImages();
     }, [receipts, fetchReceiptsImages, setIsLoadingReceiptImages]);
 
-    
+    // Opens alert actionSheet style to choose image source
     const addReceiptHandler = useCallback(() => {
-        // https://github.com/react-native-community/react-native-image-picker
-        ImagePicker.showImagePicker(imagePickerOptions, (response) => {
-            if (response.didCancel) {
-                console.log('User cancelled image picker');
-            } else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            } else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            } else {
-                const sourceData = { uri: 'data:image/jpeg;base64,' + response.data };
-                props.addReceipt(sourceData);
-            }
-        });
-        // Swift Native Module
-    }, [ImagePicker]);
+        ActionSheetIOS.showActionSheetWithOptions({
+                title: 'Select source',
+                options: ['Cancel', 'Take Photo', 'Select From Library'],
+                cancelButtonIndex: 0,
+                tintColor: Colors.primary
+            },
+            (buttonIndex) => {
+                if (buttonIndex === 1) {
+                    // JS Realm calls Swift
+                    // Open image picker native in camera mode
+                    NativeModules.ImagePickerInstantiator.instantiateImagePicker('camera', imageData => {
+                        addReceipt(imageData);
+                    });
+                } else if (buttonIndex === 2) {
+                    // JS Realm calls Swift
+                    // Open image picker native in photo library mode
+                    NativeModules.ImagePickerInstantiator.instantiateImagePicker('library', imageData => {
+                        addReceipt(imageData);
+                    });
+                }
+            },
+        );
+    }, []);
+
+    // Adds receipt
+    const addReceipt = useCallback((imageData) => {
+        const sourceData = { uri: 'data:image/jpeg;base64,' + imageData };
+        props.addReceipt(sourceData);
+    }, []);
     
+    // Adds comment
     const addCommentHandler = () => {
         if (!addComment) {
+            // Open text input
             inputRef = true;
             setAddComment(true);
         } else {
+            // Pressed "done", save comment, close text input
             setAddComment(false);
             if (commentValue != null) {
                 // Save comment only if user has actually added or edited it
@@ -108,10 +120,11 @@ const ExpenditureDetailsCard = props => {
         }
     };
 
+    // text input handler for comment
     const commentInputHandler = (inputText) => {
         setCommentValue(inputText);
     };
-
+    
     return (      
         <ScrollView style={styles.scrollView}>
             <KeyboardAvoidingView 
@@ -192,7 +205,7 @@ const ExpenditureDetailsCard = props => {
                                         renderItem={(itemData) =>
                                             <ThumbImageItem 
                                                 navigation={navigation}
-                                                imageUri={itemData.item.data}
+                                                imageUri = {itemData.item.data}
                                                 error={itemData.item.error}/>
                                         }
                                     />
@@ -272,7 +285,7 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     listContainer: {
-        height: 160,
+        height: 150,
         width: '100%',
         marginVertical: 10
     },

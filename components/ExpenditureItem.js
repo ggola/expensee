@@ -153,22 +153,23 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'center',
         height: '27%',
         paddingHorizontal: 5
     },
     detailContainerLeft: {
-        width: '43%',
+        width: '38%',
         height: '100%',
-        marginRight: '3%'
+        marginRight: 20
     },
     detailContainerAddOns: {
         height: '100%'
     },
     detailContainerRight: {
-        width: '50%',
-        height: '100%'
+        width: '48%',
+        height: '100%',
+        marginRight: 20
     },
     iconContainer: {
         height: 23,

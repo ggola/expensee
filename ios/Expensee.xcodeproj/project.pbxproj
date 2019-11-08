@@ -12,6 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		6E087DA54A402E7C6C0151E9 /* libPods-Expensee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 947F19265796AA13FEB7B0AE /* libPods-Expensee.a */; };
+		B41C557723746BE900AA021A /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C557623746BE900AA021A /* ImagePickerController.swift */; };
+		B41C55792374871400AA021A /* NativeModuleExpensee.m in Sources */ = {isa = PBXBuildFile; fileRef = B41C55782374871400AA021A /* NativeModuleExpensee.m */; };
+		B4F898F2237519F7007B1AEA /* ImagePickerInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F898F1237519F7007B1AEA /* ImagePickerInstantiator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,10 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A19686C2ECB22877A08F37E /* Pods-Expensee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expensee.release.xcconfig"; path = "Target Support Files/Pods-Expensee/Pods-Expensee.release.xcconfig"; sourceTree = "<group>"; };
 		947F19265796AA13FEB7B0AE /* libPods-Expensee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Expensee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41C557523746BE800AA021A /* Expensee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expensee-Bridging-Header.h"; sourceTree = "<group>"; };
+		B41C557623746BE900AA021A /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		B41C55782374871400AA021A /* NativeModuleExpensee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeModuleExpensee.m; sourceTree = "<group>"; };
+		B4F898F1237519F7007B1AEA /* ImagePickerInstantiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerInstantiator.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -48,11 +55,15 @@
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				B41C557623746BE900AA021A /* ImagePickerController.swift */,
+				B4F898F1237519F7007B1AEA /* ImagePickerInstantiator.swift */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				B41C557523746BE800AA021A /* Expensee-Bridging-Header.h */,
+				B41C55782374871400AA021A /* NativeModuleExpensee.m */,
 			);
 			name = Expensee;
 			sourceTree = "<group>";
@@ -140,6 +151,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 57MX4FQHZP;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -237,8 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41C557723746BE900AA021A /* ImagePickerController.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				B41C55792374871400AA021A /* NativeModuleExpensee.m in Sources */,
+				B4F898F2237519F7007B1AEA /* ImagePickerInstantiator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +277,7 @@
 			baseConfigurationReference = 2B9A67B8C764393769F7C6F8 /* Pods-Expensee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 57MX4FQHZP;
@@ -274,6 +290,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Expensee;
+				SWIFT_OBJC_BRIDGING_HEADER = "Expensee-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -283,6 +302,7 @@
 			baseConfigurationReference = 8A19686C2ECB22877A08F37E /* Pods-Expensee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57MX4FQHZP;
 				INFOPLIST_FILE = Expensee/Info.plist;
@@ -294,6 +314,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Expensee;
+				SWIFT_OBJC_BRIDGING_HEADER = "Expensee-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

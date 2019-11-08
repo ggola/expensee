@@ -38,15 +38,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: Colors.primary,
         borderWidth: 1,
-        height: 140,
-        width: 70,
-        borderRadius: 8,
+        height: 130,
+        width: 80,
+        borderRadius: 6,
         overflow: 'hidden',
         marginRight: 15
     },
     image: {
-        height: 140,
-        width: 70
+        height: 135,
+        width: 80,
     },
     errorText: {
         fontSize: 14,

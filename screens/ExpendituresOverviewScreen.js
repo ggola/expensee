@@ -181,7 +181,7 @@ const ExpendituresOverviewScreen = props => {
                         blurOnSubmit
                         autoCapitalize='none'
                         autoCorrect={false}
-                        placeholder='Try: EUR or 2000 GBP or Hoover'
+                        placeholder='Try: EUR or 2000 GBP or Hoover or R'
                         placeholderTextColor='rgba(37,42,52,0.7)'
                         keyboardType='default'
                         returnKeyType='search'

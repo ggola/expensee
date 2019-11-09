@@ -1,6 +1,6 @@
 version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
-options: "dbb3187faac8975f5871e7270dd57fd0"
-build_time: [1573330186, 991158000]
+options: "e13c75e7d3f03976c27cad8ff01e55ed"
+build_time: [1573337305, 151120000]
 inputs:
-  "/Users/giuliogola/Desktop/React Native/Apps/expensee/ios/ImagePickerController.swift": [1573220361, 840875590]
+  "/Users/giuliogola/Desktop/React Native/Apps/expensee/ios/ImagePickerController.swift": [1573336542, 722533786]
   "/Users/giuliogola/Desktop/React Native/Apps/expensee/ios/ImagePickerInstantiator.swift": [1573207304, 483340694]

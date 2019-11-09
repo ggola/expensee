@@ -54,7 +54,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		NMDo9wd/RRSX6xfshAxCB261T2E=
+		rIuo0HwU/zaT+wzO1ZLyJQgFVrs=
 		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
@@ -116,6 +116,24 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
+		<key>da.lproj/LaunchScreen.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rcg7GeeTSRscbqD9i0bNnzLlkvw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>it.lproj/LaunchScreen.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rcg7GeeTSRscbqD9i0bNnzLlkvw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>libswiftRemoteMirror.dylib</key>
 		<data>
 		JI0FfNDsiJNt4VEol0ClchSYrYY=
@@ -259,11 +277,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NMDo9wd/RRSX6xfshAxCB261T2E=
+			rIuo0HwU/zaT+wzO1ZLyJQgFVrs=
 			</data>
 			<key>hash2</key>
 			<data>
-			1vvlHRBOoKd1tnPLn7/M0VlaZnel+2cAoQTQU9W9yZ8=
+			o3T+gXsAVR+aYjBqgkAU/b+N+B69p5OCFD2TpehZOjU=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
@@ -408,6 +426,32 @@
 			<data>
 			dDQkURN0FS9nA46CiwsO4gRUgkZO1eRPAmvheFpVOa8=
 			</data>
+		</dict>
+		<key>da.lproj/LaunchScreen.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rcg7GeeTSRscbqD9i0bNnzLlkvw=
+			</data>
+			<key>hash2</key>
+			<data>
+			AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>it.lproj/LaunchScreen.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rcg7GeeTSRscbqD9i0bNnzLlkvw=
+			</data>
+			<key>hash2</key>
+			<data>
+			AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>libswiftRemoteMirror.dylib</key>
 		<dict>

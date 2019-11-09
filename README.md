@@ -27,6 +27,9 @@ Pleo mobile challenge
   </ul>
 </ul>
 
+<b>IMPORTANT:</b></br>
+<b>If the app does not build correctly on the javascript IDE you are using, build it directly from Xcode by opening the expensee.xcworkspace from the ios folder</b>
+
 <h3><b>Implementation</b></h3>
 <ul>
   <li>Javascript and Swift</li>

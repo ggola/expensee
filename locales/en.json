@@ -1,0 +1,42 @@
+{
+    "expenses_overview": {
+        "title": "Expenses",
+        "prev_button": "Prev 25",
+        "next_button": "Next 25",
+        "of_label": " of ",
+        "search_placeholder": "Try EUR or 2000 GBP or Hoover or R",
+        "filtered_results_label": "Filtered results",
+        "search_meassage_no_results": "Ops... nothing came out of your search",
+        "error_title": "There was a problem fetching the expenses",
+        "error_message": "Cannot access expenses",
+        "try_again_button": "Try again",
+        "no_expenses_to_show_label": "There are no expenses to show"
+    },
+    "expense_details": {
+        "title": "Expense details",
+        "add_button": "Add",
+        "edit_button": "Edit",
+        "done_button": "Done",
+        "no_comments_label": "NO COMMENTS",
+        "no_recepits_attached_label": "No receipts attached",
+        "one_receipt_attached_label": "1 receipt attached",
+        "receipts_attached_label": " receipts attached",
+        "image_picker_menu_title": "Select source",
+        "image_picker_menu_photo_option": "Take Photo",
+        "image_picker_menu_library_option": "Choose from Library",
+        "cancel_button": "Cancel",
+        "comment_added_title": "Comment successfully added",
+        "comment_error_title": "There was a problem adding the comment",
+        "receipt_added_title": "Receipt successfully added",
+        "receipt_error_title": "There was a problem adding the receipt",
+        "got_it_button": "Got it",
+        "error_title": "There was a problem fetching the expense",
+        "error_message": "Cannot access the expense",
+        "try_again_button": "Try again",
+        "error_general_label": "There was an error"
+
+    },
+    "expense_picture": {
+        "title": "Receipt picture"
+    }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Button, Text, StyleSheet} from 'react-native';
 
+import { strings } from '../locales/i18n';
+
 import Colors from '../constants/Colors';
 
 const LoadExpendituresSection = props => {
@@ -14,7 +16,7 @@ const LoadExpendituresSection = props => {
                 <View style={styles.buttonContainer}>
                     <Button 
                         style={styles.button}
-                        title='Prev 25'
+                        title={strings('expenses_overview.prev_button')}
                         disabled={props.prevButtonDisabled}
                         color={Colors.primary}
                         onPress={props.prevButtonOnPress}
@@ -23,7 +25,7 @@ const LoadExpendituresSection = props => {
                 <View style={styles.buttonContainer}>
                     <Button 
                         style={styles.button}
-                        title='Next 25'
+                        title={strings('expenses_overview.next_button')}
                         disabled={props.nextButtonDisabled}
                         color={Colors.primary}
                         onPress={props.nextButtonOnPress}

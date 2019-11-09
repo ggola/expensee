@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, TextInput, StyleSheet, Platform, ScrollView, KeyboardAvoidingView, FlatList, ActivityIndicator, ActionSheetIOS, NativeModules } from 'react-native';
 
+import { strings } from '../locales/i18n';
+
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['requires main queue setup']);
 
@@ -74,8 +76,12 @@ const ExpenditureDetailsCard = props => {
     // Opens alert actionSheet style to choose image source
     const addReceiptHandler = useCallback(() => {
         ActionSheetIOS.showActionSheetWithOptions({
-                title: 'Select source',
-                options: ['Cancel', 'Take Photo', 'Select From Library'],
+                title: strings('expense_details.image_picker_menu_title'),
+                options: [
+                    strings('expense_details.cancel_button'),
+                    strings('expense_details.image_picker_menu_photo_option'),
+                    strings('expense_details.image_picker_menu_library_option')
+                ],
                 cancelButtonIndex: 0,
                 tintColor: Colors.primary
             },
@@ -129,8 +135,7 @@ const ExpenditureDetailsCard = props => {
         <ScrollView style={styles.scrollView}>
             <KeyboardAvoidingView 
                 behavior = 'position'
-                keyboardVerticalOffset = {receipts.length > 0 ? -130 : 50}
-            >
+                keyboardVerticalOffset = {receipts.length > 0 ? -130 : 50}>
                 <View style={styles.expenditureContainer}>
                     <AmountItem 
                         styleContainer={styles.headerContainer}
@@ -154,11 +159,11 @@ const ExpenditureDetailsCard = props => {
                                 Platform.OS === 'android' ? 'md-chatbubbles' : 'ios-chatbubbles'
                             }
                             infoItemText={
-                                props.comment == "" ? 'NO COMMENTS' : props.comment
+                                props.comment == "" ? strings('expense_details.no_comments_label') : props.comment
                             }
                             isLoading={props.isLoadingComment}
                             buttonTitle={
-                                addComment ? 'Done' : props.comment == "" ? 'Add' : 'Edit'
+                                addComment ? strings('expense_details.done_button') : props.comment == "" ? strings('expense_details.add_button') : strings('expense_details.edit_button')
                             }
                             onPressButton={addCommentHandler}
                             styleBottomContainer={styles.detailAndButtonContainer}
@@ -183,10 +188,10 @@ const ExpenditureDetailsCard = props => {
                                 Platform.OS === 'android' ? 'md-folder-open' : 'ios-folder-open'
                             }
                             infoItemText={
-                                receipts.length === 0 ? 'No receipts attached' : receipts.length === 1 ? '1 receipt attached' : receipts.length + ' receipts attached'
+                                receipts.length === 0 ? strings('expense_details.no_recepits_attached_label') : receipts.length === 1 ? strings('expense_details.one_receipt_attached_label') : receipts.length + strings('expense_details.receipts_attached_label')
                             }
                             isLoading={props.isLoadingReceipt}
-                            buttonTitle='Add'
+                            buttonTitle = {strings('expense_details.add_button')}
                             onPressButton={addReceiptHandler}
                             styleBottomContainer = {
                                 receipts.length > 0 ? styles.listContainer : null

@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Image, StyleSheet, Dimensions } from 'react-native';
 
+import { strings } from '../locales/i18n';
+
 const ReceiptImageScreen = props => {
 
     const imageUri = props.navigation.getParam('imageUri');
@@ -16,7 +18,7 @@ const ReceiptImageScreen = props => {
 };
 
 ReceiptImageScreen.navigationOptions = {
-    headerTitle: 'Receipt Picture'
+    headerTitle: strings('expense_picture.title')
 };
 
 const styles = StyleSheet.create({

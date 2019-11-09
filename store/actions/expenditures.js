@@ -3,6 +3,8 @@ export const ADD_RECEIPT = 'ADD_RECEIPT';
 export const GET_EXPENDITURES = 'GET_EXPENDITURES';
 export const GET_EXPENDITURE_FROM_ID = 'GET_EXPENDITURE_FROM_ID';
 
+import { strings } from '../../locales/i18n';
+
 // Models
 import Expenditure from '../../models/expenditure';
 
@@ -31,7 +33,7 @@ export const addReceipt = (expenditureId, expenditureIndex, imageFile) => {
             });
 
             if (!response.ok) {
-                throw new Error('Problems updating receipt')
+                throw new Error(strings('expense_details.error_general_label'))
             }
 
             if (response) {
@@ -57,7 +59,7 @@ export const addReceipt = (expenditureId, expenditureIndex, imageFile) => {
 
             } 
         } catch (err) {
-            throw new Error('Cannot access expenses');
+            throw new Error(strings('expense_details.error_general_label'));
         }
     }
 };
@@ -77,7 +79,7 @@ export const addComment = (expenditureId, expenditureIndex, comment) => {
             });
 
             if (!response.ok) {
-                throw new Error('Problems updating comment')
+                throw new Error(strings('expense_details.error_general_label'))
             }
 
             if (response) {
@@ -103,7 +105,7 @@ export const addComment = (expenditureId, expenditureIndex, comment) => {
 
             } 
         } catch (err) {
-            throw new Error('Cannot access expenses');
+            throw new Error(strings('expense_details.error_general_label'));
         }
     }
 };
@@ -115,7 +117,7 @@ export const getExpenditures = (limit, offset, searchQuery) => {
             const response = await fetch(`${ENV.baseUrl}/expenses?limit=${limit}&offset=${offset}`);
 
             if (!response.ok) {
-                throw new Error('Problems loading expenditures')
+                throw new Error(strings('expense_details.error_general_label'))
             }
 
             if (response) {
@@ -152,7 +154,7 @@ export const getExpenditures = (limit, offset, searchQuery) => {
 
             } 
         } catch (err) {
-            throw new Error('Cannot access expenses');
+            throw new Error(strings('expense_details.error_general_label'));
         }
     }
 }
@@ -164,7 +166,7 @@ export const getExpenditureFromId = (expenditureId) => {
             const response = await fetch(`${ENV.baseUrl}/expenses/${expenditureId}`);
 
             if (response.status === 404) {
-                throw new Error('Expense not found')
+                throw new Error(strings('expense_details.error_general_label'))
             }
 
             if (response) {
@@ -189,7 +191,7 @@ export const getExpenditureFromId = (expenditureId) => {
 
             }
         } catch (err) {
-            throw new Error('Expense not found');
+            throw new Error(strings('expense_details.error_general_label'));
         }
     }
 }

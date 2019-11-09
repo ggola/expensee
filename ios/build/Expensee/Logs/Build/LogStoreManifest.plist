@@ -6,38 +6,6 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>8308AA18-1F75-43A1-BF91-14C3308D8A02</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>8308AA18-1F75-43A1-BF91-14C3308D8A02.xcactivitylog</string>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Expensee project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Expensee</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>594900520.52885306</real>
-			<key>timeStoppedRecording</key>
-			<real>594900535.93948197</real>
-			<key>title</key>
-			<string>Building workspace Expensee with scheme Expensee and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>8308AA18-1F75-43A1-BF91-14C3308D8A02</string>
-		</dict>
 		<key>D029EF06-7DE3-48E3-8B5E-FF3A3F98FA8C</key>
 		<dict>
 			<key>className</key>

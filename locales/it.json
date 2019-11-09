@@ -1,0 +1,42 @@
+{
+    "expenses_overview": {
+        "title": "Spese",
+        "prev_button": "Prec 25",
+        "next_button": "Succ 25",
+        "of_label": " di ",
+        "search_placeholder": "Prova EUR o 2000 GBP o Hoover o R",
+        "filtered_results_label": "Risultati della ricerca",
+        "search_meassage_no_results": "Ops... non è venuto fuori nulla dalla tua ricerca",
+        "error_title": "C'è stato un problema nel caricare le spese",
+        "error_message": "Impossibile accedere alle spese",
+        "try_again_button": "Riprova",
+        "no_expenses_to_show_label": "Non ci sono spese da mostrare"
+    },
+    "expense_details": {
+        "title": "Dettagli della spesa",
+        "add_button": "Aggiungi",
+        "edit_button": "Modifica",
+        "done_button": "Fatto",
+        "no_comments_label": "NO COMMENTS",
+        "no_recepits_attached_label": "Non ci sono ricevute",
+        "one_receipt_attached_label": "1 ricevuta",
+        "receipts_attached_label": " ricevute",
+        "image_picker_menu_title": "Seleziona la sorgente",
+        "image_picker_menu_photo_option": "Fai una foto",
+        "image_picker_menu_library_option": "Scegli dal rullino",
+        "cancel_button": "Cancella",
+        "comment_added_title": "Commento aggiunto",
+        "comment_error_title": "C'è stato un problema nell'aggiungere il commento",
+        "receipt_added_title": "Ricevuta aggiunta",
+        "receipt_error_title": "C'è stato un problema nell'aggiungere la ricevuta",
+        "got_it_button": "OK",
+        "error_title": "C'è stato un problema nel caricare la spesa",
+        "error_message": "Impossibile accedere alla spesa",
+        "try_again_button": "Riprova",
+        "error_general_label": "C'è stato un errore"
+
+    },
+    "expense_picture": {
+        "title": "Foto della ricevuta"
+    }
+}

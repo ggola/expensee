@@ -1,0 +1,42 @@
+{
+    "expenses_overview": {
+        "title": "Udgifter",
+        "prev_button": "Tidl 25",
+        "next_button": "Næste 25",
+        "of_label": " af ",
+        "search_placeholder": "Prøv EUR eller 2000 GBP eller Hoover eller R",
+        "filtered_results_label": "Filtrerede resultater",
+        "search_meassage_no_results": "Ops ... intet kom ud af din søgning",
+        "error_title": "Der opstod et problem med at hente udgifterne",
+        "error_message": "Kan ikke få adgang til udgifter",
+        "try_again_button": "Prøv igen",
+        "no_expenses_to_show_label": "Der er ingen udgifter at vise"
+    },
+    "expense_details": {
+        "title": "Udgifter til detaljer",
+        "add_button": "Tilføje",
+        "edit_button": "Redigere",
+        "done_button": "Færdig",
+        "no_comments_label": "NO COMMENTS",
+        "no_recepits_attached_label": "Ingen kvitteringer vedlagt",
+        "one_receipt_attached_label": "1 kvittering vedlagt",
+        "receipts_attached_label": " kvitteringer vedlagte",
+        "image_picker_menu_title": "Vælg kilde",
+        "image_picker_menu_photo_option": "Tag et billede",
+        "image_picker_menu_library_option": "Vælg fra Fotobibliotek",
+        "cancel_button": "Afbestille",
+        "comment_added_title": "Kommentar tilføjet",
+        "comment_error_title": "Der opstod et problem med tilføjelse af kommentaren",
+        "receipt_added_title": "Kvitteringen blev tilføjet",
+        "receipt_error_title": "Der opstod et problem med tilføjelse af kvitteringen",
+        "got_it_button": "Forstået",
+        "error_title": "Der opstod et problem med at hente udgifter",
+        "error_message": "Kan ikke få adgang til udgifter",
+        "try_again_button": "Prøv igen",
+        "error_general_label": "Der opstod en fejl"
+
+    },
+    "expense_picture": {
+        "title": "Kvitteringsbillede"
+    }
+}

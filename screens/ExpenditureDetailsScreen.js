@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Alert, View, ActivityIndicator, StyleSheet } from 'react-native';
 
+import { strings } from '../locales/i18n';
+
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
 // Dispatch actions
@@ -49,15 +51,15 @@ const ExpenditureDetailsScreen = props => {
     // Shows error alert for networking problems
     useEffect(() => {
         if (!isLoading && error) {
-            Alert.alert('There was a problem fetching the expense', error, 
+            Alert.alert(strings('expense_details.error_title'), error,
                 [
                     {
-                        text: 'Try again',
+                        text: strings('expense_details.try_again_button'),
                         style: 'default',
                         onPress: () => loadData()
                     },
                     {
-                        text: 'Cancel',
+                        text: strings('expense_details.cancel_button'),
                         style: 'cancel',
                         onPress: () => props.navigation.goBack()
 
@@ -72,7 +74,9 @@ const ExpenditureDetailsScreen = props => {
         setIsLoadingReceipt(true);
         try {
             await dispatch(expenditureActions.addReceipt(expenditureId, expenditureIndex, imageFile));
-            Alert.alert('Receipt successfully added!', null, [{ text: 'Got it' }]);
+            Alert.alert(strings('expense_details.receipt_added_title'), null, [{
+                text: strings('expense_details.got_it_button')
+            }]);
             setIsLoadingReceipt(false);
         } catch (err) {
             setErrorReceipt(err);
@@ -85,7 +89,9 @@ const ExpenditureDetailsScreen = props => {
         setIsLoadingComment(true);
         try {
             await dispatch(expenditureActions.addComment(expenditureId, expenditureIndex, comment));
-            Alert.alert('Comment successfully added!', null, [{ text: 'Got it' }]);
+            Alert.alert(strings('expense_details.comment_added_title'), null, [{
+                text: strings('expense_details.got_it_button')
+            }]);
             setIsLoadingComment(false);
         } catch (err) {
             setErrorComment(err);
@@ -95,26 +101,26 @@ const ExpenditureDetailsScreen = props => {
 
     if (!isLoadingComment && errorComment) {
         Alert.alert(
-            'There was a problem adding the comment', null,
+            strings('expense_details.comment_error_title'), null,
             [{
-                text: 'Try again',
+                text: strings('expense_details.try_again_button'),
                 onPress: () => {setErrorComment(null)}
             },
             {
-                text: 'Cancel'
+                text: strings('expense_details.cancel_button')
             }]
         )
     } 
 
     if (!isLoadingReceipt && errorReceipt) {
         Alert.alert(
-            'There was a problem adding the receipt', null,
+            strings('expense_details.receipt_error_title'), null,
             [{
-                text: 'Try again',
+                text: strings('expense_details.try_again_button'),
                 onPress: () => {setErrorReceipt(null)}
             },
             {
-                text: 'Cancel'
+                text: strings('expense_details.cancel_button')
             }]
         )
     } 
@@ -153,7 +159,7 @@ const ExpenditureDetailsScreen = props => {
 };
 
 ExpenditureDetailsScreen.navigationOptions = {
-    headerTitle: 'Expense details'
+    headerTitle: strings('expense_details.title')
 };
 
 const styles = StyleSheet.create({

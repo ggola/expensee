@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Button, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Platform, TextInput, Animated } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Platform, TextInput, Animated } from 'react-native';
+
+import { strings } from '../locales/i18n';
 
 // Header Buttons
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
@@ -107,8 +109,8 @@ const ExpendituresOverviewScreen = props => {
     // Shows error alert for networking problems
     useEffect(() => {
         if (!isLoading && error) {
-            Alert.alert('There was a problem fetching the expenses', error, [{
-                text: 'Try again',
+            Alert.alert(strings('expenses_overview.error_title'), error, [{
+                text: strings('expenses_overview.try_again_button'),
                 style: 'default',
                 onPress: () => loadData(Parameters.limit, initialCount - 1, null)
             }]);
@@ -165,11 +167,11 @@ const ExpendituresOverviewScreen = props => {
     if (!isLoading && totalExpenditures === 0) {
         return (
             <View style={styles.screenCentered}>
-                <Text style={styles.text}>There are no expenses to show</Text>
+                <Text style={styles.text}>{strings('expenses_overview.no_expenses_to_show_label')}</Text>
             </View>
         );
     }
-    
+
     return (
         <View style={styles.screen}>
             <View style={styles.searchBoxContainer}>
@@ -181,7 +183,7 @@ const ExpendituresOverviewScreen = props => {
                         blurOnSubmit
                         autoCapitalize='none'
                         autoCorrect={false}
-                        placeholder='Try: EUR or 2000 GBP or Hoover or R'
+                        placeholder={strings('expenses_overview.search_placeholder')}
                         placeholderTextColor='rgba(37,42,52,0.7)'
                         keyboardType='default'
                         returnKeyType='search'
@@ -217,7 +219,7 @@ const ExpendituresOverviewScreen = props => {
                     }
                 />
                 :
-                    <Text style={styles.text}>Ops... nothing came out of your search</Text>
+                    <Text style={styles.text}>{strings('expenses_overview.search_meassage_no_results')}</Text>
                 )
             }
             {totalExpenditures !== 0 ? 
@@ -228,9 +230,9 @@ const ExpendituresOverviewScreen = props => {
                 nextButtonOnPress={loadNewExpensesHandler.bind(this, 'Next')}
                 >
                 {isFilteredResults ? 
-                'Filtered results'
+                strings('expenses_overview.filtered_results_label')
                 :
-                initialCount + '-' + ((initialCount + Parameters.limit - 1) > totalExpenditures ? totalExpenditures : initialCount + Parameters.limit - 1) + ' of ' + totalExpenditures
+                initialCount + '-' + ((initialCount + Parameters.limit - 1) > totalExpenditures ? totalExpenditures : initialCount + Parameters.limit - 1) + strings('expenses_overview.of_label') + totalExpenditures
                 }
             </LoadExpendituresSection>
             :
@@ -243,7 +245,7 @@ const ExpendituresOverviewScreen = props => {
 ExpendituresOverviewScreen.navigationOptions = (navigationData) => {
     const searchBoxHandler = navigationData.navigation.getParam('searchBoxHandler');
     return {
-        headerTitle: 'Expenses',
+        headerTitle: strings('expenses_overview.title'),
         headerRight: (
             <HeaderButtons HeaderButtonComponent={HeaderButton}>
                 <Item 

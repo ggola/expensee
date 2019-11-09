@@ -34,6 +34,6 @@ target 'Expensee' do
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
-  pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 
 end

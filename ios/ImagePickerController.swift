@@ -47,7 +47,7 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
 
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let image = info[.originalImage] as? UIImage {
-      let imageOrientatedUp = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .up)
+      let imageOrientatedUp = UIImage(cgImage: image.cgImage!, scale: image.scale, orientation: .right)
       let imageData = imageOrientatedUp.jpegData(compressionQuality: 0.2)! as NSData
       imageDataEncoded = imageData.base64EncodedString(options: .lineLength64Characters)
       if let imageData = imageDataEncoded {
